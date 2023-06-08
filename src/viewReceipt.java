@@ -84,7 +84,7 @@ public class viewReceipt implements ActionListener{
             table.getColumnModel().getColumn(0).setMaxWidth(300);
             table.getColumnModel().getColumn(1).setMaxWidth(300);
             table.getColumnModel().getColumn(2).setMaxWidth(300);
-            table.getColumnModel().getColumn(3).setMaxWidth(20);
+//            table.getColumnModel().getColumn(3).setMaxWidth(20);
         } catch (Exception E) {
             E.printStackTrace();
         }

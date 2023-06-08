@@ -151,7 +151,7 @@ public class productlist implements ActionListener {
             p=product_idText.getText();
             a=amountText.getText();
 
-            if (p.isEmpty() || a.isEmpty())
+            if (p.isEmpty() || a.isEmpty() || Integer.parseInt(a)<=0)
             {
                 confirmLable.setForeground(Color.RED);
                 confirmLable.setFont(new Font("Arial", Font.ITALIC,26));

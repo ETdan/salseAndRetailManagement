@@ -39,7 +39,7 @@ public class home implements ActionListener {
         else
         {
             System.out.println("Admin");
-            new admin(0);
+            new emplogin(0);
 //            frame.dispose();
         }
 

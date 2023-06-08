@@ -83,7 +83,7 @@ public class emplogin implements ActionListener {
 
                 if (resultSet.next())
                 {
-                    if(resultSet.getString(4)=="e")
+                    if(resultSet.getString(4).charAt(0)=='e')
                         new employee(resultSet.getInt(1));
                     else
                         new manager(resultSet.getInt(1));
