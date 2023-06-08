@@ -39,7 +39,8 @@ public class DB {
             {
                  user_id=resultSet.getInt(1);
 //                 +" "+resultSet.getString(2)+" "+resultSet.getString(3)+ "/n\n";
-                return user_id;
+                System.out.println("user_id send:"+user_id);
+                return Integer.parseInt(username);
             }
             else
             {

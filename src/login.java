@@ -67,7 +67,8 @@ public class login implements ActionListener {
             int result= db.cusomerExist(userID,password);
             if (result>=0)
             {
-                new home(result);
+                new productlist(result);
+                System.out.println("result:"+result);
                 j.dispose();
             }
             else

@@ -3,7 +3,7 @@ import javax.swing.*;
 
 public class customer {
     JFrame j=new JFrame("Customer Page");
-    public customer(){
+    public customer(int user_id){
 
 
 

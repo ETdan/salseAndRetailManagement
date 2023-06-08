@@ -30,10 +30,6 @@ public class list implements ActionListener {
         t.setBounds(80,180,500,500);
 
 
-
-
-
-
 //        JLabel x=new JLabel("some");
 //        x.setBounds(80,100,30,30);
 

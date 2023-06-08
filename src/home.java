@@ -33,14 +33,14 @@ public class home implements ActionListener {
     public void actionPerformed(ActionEvent e){
         if (e.getSource() ==customerButton)
         {
-            new productlist(user_id);
+            new login(user_id);
             frame.dispose();
         }
         else
         {
             System.out.println("Admin");
-            new productlist(user_id);
-            frame.dispose();
+            new admin(0);
+//            frame.dispose();
         }
 
         frame.dispose();

@@ -27,6 +27,7 @@ public class productlist implements ActionListener {
 
     public productlist(int user_id){
 
+            int uid=user_id;
             this.user_id=user_id;
 
             DefaultTableModel model = new DefaultTableModel();
@@ -54,7 +55,8 @@ public class productlist implements ActionListener {
                 conn = DriverManager.getConnection(url, username, password);
 
                 Statement s = conn.createStatement();
-                String q = "select * from products";
+                System.out.println("user iddd:" +user_id);
+                String q = "select * from products;";
 
                 ResultSet r = s.executeQuery(q);
                 ResultSetMetaData rm = r.getMetaData();
@@ -70,7 +72,7 @@ public class productlist implements ActionListener {
                     System.out.println(rm.getColumnName(i+1));
                 }
                 model.setColumnIdentifiers(colName);
-                String id, name, dis, price, amount;
+                String id, name, price, amount;
                 while (r.next()) {
                     id = r.getString(1);
                     name = r.getString(2);
@@ -124,12 +126,15 @@ public class productlist implements ActionListener {
 
         JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, true, p, n);
         splitPane.setOneTouchExpandable(true);
-        splitPane.setDividerLocation(500);
+//        int dividerLocation = splitPane.getPreferredSize().width / 2;
+//        System.out.println(dividerLocation);
+//        splitPane.setDividerLocation(300);
 
-        Dimension minimumSize = new Dimension(100, 50);
+
+        Dimension minimumSize = new Dimension(450, 50);
         p.setMinimumSize(minimumSize);
         n.setMinimumSize(minimumSize);
-        splitPane.setPreferredSize(new Dimension(400, 200));
+        splitPane.setPreferredSize(new Dimension(200, 200));
 
 //
 
@@ -177,7 +182,7 @@ public class productlist implements ActionListener {
                             *
                             *
                             *
-                            * 
+                            *
                             *
                             *
                             * add validation to amount
@@ -191,7 +196,7 @@ public class productlist implements ActionListener {
                             *
                             *
                             * */
-                            String sql = "INSERT INTO cart (user_id, product_id,quantity) VALUES ("+user_id+","+id+","+a+")";
+                            String sql = "INSERT INTO cart (user_id, product_id,quantity) VALUES ("+user_id+","+p+","+a+")";
                             int rowsInserted = stmt.executeUpdate(sql);
                             System.out.println(rowsInserted);
                         }
@@ -216,7 +221,8 @@ public class productlist implements ActionListener {
             System.out.println(p+" "+a);
         }
         else if (e.getSource()==buyButton) {
-
+            new buyproduct(this.user_id);
+            frame.dispose();
         }
     }
 }
