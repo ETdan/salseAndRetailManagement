@@ -238,13 +238,13 @@ public class buyproduct implements ActionListener {
                     ResultSet pr=prs.executeQuery(pid);
                     if (pr.next())
                         pa= pr.getInt("amount");
-                    pa=amount-pa;
+                    pa=pa-amount;
                     String pq="UPDATE products SET amount =" +pa+" WHERE id="+product_id+";";
                     int rpq = pl.executeUpdate(pq);
                     if (rpq<0)
-                        confirmLable.setText("product" +product_id+"haven't been add at "+rpq);
+                        confirmLable.setText("product" +product_id+"haven't been add at customer "+rpq);
                     else
-                        confirmLable.setText("product " +product_id+" add at "+rpq);
+                        confirmLable.setText("product " +product_id+" add at "+rpq+"'s");
                     System.out.println(pa);
                 }
                 System.out.println("to receit:"+user_id);
